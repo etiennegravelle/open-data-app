@@ -4,7 +4,7 @@
 // This is the best way to keep usernames and passwords out of public GitHub repos
 $user = getenv('DB_USER');
 $pass = getenv('DB_PASS');
-$dsn = getenv (stripslashes('DB_DSN'));
+$dsn = stripslashes(getenv('DB_DSN'));
 
 $db = new PDO($dsn, $user, $pass);
 
