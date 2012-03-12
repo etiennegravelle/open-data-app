@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html {
+	font-family: 'Open Sans', sans-serif;
+	background-image:url(../images/bg_03.jpg);
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 70%;	
+}
+
+h1 {
+	background-image:url(../images/odr_03.png);
+	text-indent: -9999px;
+	height: 177px;
+	width: 403px;
+	margin-left: 220px;
+	padding: 0;
+}
+
+.wrapper {
+	display: inline-block;
+	margin-bottom: 20px;
+	padding:0;
+}
+
+.content {
+	background-color: rgba(0, 0, 0, 0.3);
+	width: 800px;
+	padding: 20px;
+	text-align: left;
+	list-style-type: none;
+	-webkit-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px 0px 10px 2px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+
+	
+}
+
+nav {
+	display: block;
+	margin: 0;
+	text-shadow: 2px 0px 0px #000;
+	filter: dropshadow(color=#000, offx=2, offy=0);
+	
+}
+
+nav ul {
+	list-style-type: none;
+
+}
+
+a,
+a:visited {
+	text-decoration: none;
+	color: #7CCBFF;
+}
+
+a:hover {
+	
+	color: #fff;
+}
+a:active {
+	text-decoration: underline;
+	color: #fff;
+}
+
+h2 {
+	color: #7ccbff;
+}
+
+
+.content p {
+	color:#fff;
+}
+
+img {
+	width: 530px;
+	height: 400px;
+		-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.proto img {
+	width:800px;
+	height: 615px;
+}
+
+

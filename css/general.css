@@ -1,0 +1,52 @@
+@charset "utf-8";
+/* CSS Document */
+
+html {
+	background-image:url(../images/background.jpg);
+}
+
+body {
+	position: relative;
+	text-align: center;
+	padding: 0;
+	margin: 0 auto;
+	max-width: 70%;	
+}
+
+.wrapper {
+	display: inline-block;
+	margin: 0;
+	padding:0;
+}
+
+header {
+	background-image:url(../images/header.png);
+	text-indent: -9999px;
+	height: 228px;
+	width: 975px;
+	margin: 0;
+	padding: 0;
+}
+
+.enter {
+	position: absolute;
+	top: 123px;
+	left: 450px;
+	width: 390px;
+	height: 33px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0px 0px 8px 2px rgba(0, 0, 0, 0.3);
+	background-color: #dec8a9;
+	outline: none;
+}
+
+.search {
+	position: absolute;
+	top: 129px;
+	left: 850px;
+}
+	
