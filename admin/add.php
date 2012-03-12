@@ -1,7 +1,5 @@
 <?php
 
-require_once '../includes/filter-wrapper.php';
-
 $errors = array();
 
 
@@ -25,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	}
 	
 	if (empty($errors)) {
-		require_once 'includes/db.php';
+		require_once '../includes/db.php';
 		
 		$sql = $db->prepare('
 			INSERT INTO rinks (rink_name, longitude, latitude)
@@ -37,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			$sql->bindValue(':latitude', $latitude, PDO::PARAM_STR);
 			$sql->execute();
 			
-			header('Location: ../index.php');
+			header('Location: index.php');
 			exit;
 	}
 }

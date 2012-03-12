@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/db.php';
+require_once '../includes/db.php';
 
 $results = $db->query('
 	SELECT id, rink_name, longitude, latitude 
@@ -16,10 +16,14 @@ $results = $db->query('
 	<title>Ottawa Outdoor Rinks</title>
 </head>
 <body>
+	<a href="add.php">Propose a Rink!</a>
 	<ul>
 	
 	<?php foreach ($results as $rink) : ?>
-		<li><a href="single.php?id=<?php echo $rink['id']; ?>"><?php echo $rink['rink_name']; ?></a>
+		<li><?php echo $rink['rink_name']; ?>
+		&bull;
+        <a href="edit.php?id=<?php echo $rink['id']; ?>">Edit</a>
+        <a href="delete.php?id=<?php echo $rink['id']; ?>">Delete</a>
 		</li>
 	<?php endforeach; ?>
 	</ul>

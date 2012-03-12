@@ -1,6 +1,5 @@
 <?php
 
-require_once '../includes/filter-wrapper.php';
 
 $errors = array();
 
@@ -8,7 +7,7 @@ $errors = array();
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 
 if(empty($id)){
-	header('Location: ../index.php');
+	header('Location: index.php');
 	exit;
 }
 
@@ -19,25 +18,30 @@ $latitude = filter_input(INPUT_POST, 'latitude', FILTER_SANITIZE_STRING);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-	if (empty($movie_name)){
-		$errors['movie_name'] = true;
+	if (empty($rink_name)){
+		$errors['rink_name'] = true;
 	}
 	
-	if (empty($year)){
-		$errors['year'] = true;
+	if (empty($longitude)){
+		$errors['longitude'] = true;
+	}
+	
+	if (empty($latitude)){
+		$errors['latitude'] = true;
 	}
 	
 	if (empty($errors)) {
-		require_once 'includes/db.php';
+		require_once '../includes/db.php';
 		
 		$sql = $db->prepare('
-			INSERT INTO movies (movie_name, year)
-			VALUES (:movie_name, :year)
+			UPDATE rinks
+			SET rink_name=:rink_name, longitude=:longitude, latitude=:latitude
 			WHERE id = :id
 			');
 			
-			$sql->bindValue(':movie_name', $movie_name, PDO::PARAM_STR);
-			$sql->bindValue(':year', $year, PDO::PARAM_STR);
+			$sql->bindValue(':rink_name', $rink_name, PDO::PARAM_STR);
+			$sql->bindValue(':longitude', $longitude, PDO::PARAM_STR);
+			$sql->bindValue(':latitude', $latitude, PDO::PARAM_STR);
 			$sql->bindValue(':id', $id, PDO::PARAM_INT);
 			$sql->execute();
 			
@@ -45,11 +49,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			exit;
 	}
 } else {
-	require_once 'includes/db.php';
+	require_once '../includes/db.php';
 	
 	$sql = $db->prepare('
-	SELECT id, movie_name, year
-	FROM movies
+	SELECT id, rink_name, longitude, latitude
+	FROM rinks
 	WHERE id = :id
 	');
 	
@@ -57,8 +61,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	$sql->execute();
 	$results = $sql->fetch();
 	
-	$movie_name = $results['movie_name'];
-	$year = $results['year'];
+	$rink_name = $results['rink_name'];
+	$longitude = $results['longitude'];
+	$latitude = $results['latitude'];
 }
 	
 	
@@ -73,12 +78,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	
 	<form method="post" action="edit.php?id=<?php echo $id; ?>">
     	<div>
-        	<label for="movie_name">Movie Name <?php if (isset($errors['movie_name'])) : ?><strong>Is required</strong><?php endif; ?></label>
-            <input id="movie_name" name="movie_name" value="<?php echo $movie_name; ?>" required>
+        	<label for="rink_name">Rink Name <?php if (isset($errors['rink_name'])) : ?><strong>Is required</strong><?php endif; ?></label>
+            <input id="rink_name" name="rink_name" value="<?php echo $rink_name; ?>" required>
 		</div>
 		<div>
-			<label for="year">year<?php if (isset($errors['year'])) :?><strong>Is required</strong><?php endif; ?></label>
-			<input id="year" name="year" value="<?php echo $year; ?>" required>
+			<label for="longitude">longitude<?php if (isset($errors['longitude'])) :?><strong>Is required</strong><?php endif; ?></label>
+			<input id="longitude" name="longitude" value="<?php echo $longitude; ?>" required>
+		</div>
+        
+        <div>
+			<label for="latitude">latitude<?php if (isset($errors['latitude'])) :?><strong>Is required</strong><?php endif; ?></label>
+			<input id="latitude" name="latitude" value="<?php echo $latitude; ?>" required>
 		</div>
 			<button type="submit">Save</button>
 	</form>
