@@ -20,9 +20,11 @@ foreach ($places_xml->Document->Folder[0]->Placemark as $place) {
 		}
 	}*/
 	
-	$sql->bindvalue(':name', $place->name, PDO::PARAM_STR);
+	$sql->bindvalue(':rink_name', $place->name, PDO::PARAM_STR);
 	//$sql->bindvalue(':street_address', $adr, PDO::PARAM_STR);
 	$sql->bindvalue(':longitude', $coords[0], PDO::PARAM_STR);
 	$sql->bindvalue(':latitude', $coords[1], PDO::PARAM_STR);
 	$sql->execute();
 }
+
+var_dump($sql->errorInfo());

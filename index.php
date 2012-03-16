@@ -6,24 +6,35 @@ $results = $db->query('
 	FROM rinks
 	ORDER BY rink_name ASC
 ');
+
+
+include 'includes/theme-top.php';
 ?>
 
 
-<!DOCTYPE HTML>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Ottawa Outdoor Rinks</title>
-</head>
-<body>
-	<ul>
+	<ol class="dinos">
 	
 	<?php foreach ($results as $rink) : ?>
-		<li><a href="single.php?id=<?php echo $rink['id']; ?>"><?php echo $rink['rink_name']; ?></a>
+    	<li itemscope itemtype="http://schema.org/TouristAttraction">
+		<a href="single.php?id=<?php echo $rink['id']; ?>" itemprop="name"><?php echo $rink['rink_name']; ?></a>
+        <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+			<meta itemprop="latitude" content="<?php echo $rink['latitude']; ?>">
+			<meta itemprop="longitude" content="<?php echo $rink['longitude']; ?>">
+		</span>
 		</li>
 	<?php endforeach; ?>
-	</ul>
+	</ol>
+    
+    <div id="map"></div>
+
+<?php
+
+include 'includes/theme-bottom.php';
+
+?>
 	
 	
 </body>
 </html>
+
+
