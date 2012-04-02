@@ -1,9 +1,93 @@
 
+html {
+	background-image: url(../images/background.jpg);
+}
+
+body{
+	text-align: center;
+}
 
 #map {
-	bottom: 0;
+	margin-top: 250px;
+	bottom: 75px;
 	position: absolute;
 	right: 0;
 	top: 0;
 	width: 75%;
 }
+
+h1 {
+	padding:0;
+	margin-top: -8px;
+}
+
+
+#foot{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+#foot1{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.rinks {
+	text-align: left;
+	height: 600px;
+	width: 500px;
+	overflow: scroll;
+}
+.rinks li {
+	cursor: pointer;
+}
+
+.rinks li:hover {
+	background-color: #f4f3f0;
+}
+
+
+
+.rater {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	vertical-align: middle;
+
+	list-style-type: none;
+	line-height: 1;
+}
+
+.rater-level {
+	float: left;
+
+	color: #efecd2;
+}
+
+.rater-level a,
+.rater-level a:link,
+.rater-level a:visited {
+	color: #efecd2;
+	text-decoration: none
+}
+
+.rater-level a:hover,
+.rater-level a:focus,
+.rater-level a:active,
+.is-rated,
+.is-rated a,
+.is-rated a:link,
+.is-rated a:visited,
+.is-rated a:hover,
+.is-rated a:focus,
+.is-rated a:active,
+.is-rated-hover a,
+.is-rated-hover a:link,
+.is-rated-hover a:visited {
+	color: #ffe91f;
+}
+
+
+

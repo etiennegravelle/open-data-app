@@ -5,7 +5,7 @@ require_once '../includes/db.php';
 $places_xml = simplexml_load_file('2009_outdoor_rinks.kml');
 
 $sql = $db->prepare('
-	INSERT INTO rinks (name, longitude, latitude)
+	INSERT INTO rinks (name, longitude, latitude, rate_count, rate_total)
 	VALUES (:name, :longitude, :latitude)
 ');
 
@@ -28,3 +28,4 @@ foreach ($places_xml->Document->Folder[0]->Placemark as $place) {
 }
 
 var_dump($sql->errorInfo());
+
