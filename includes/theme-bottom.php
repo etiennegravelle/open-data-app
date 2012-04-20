@@ -1,7 +1,7 @@
 	
 
    
-   
+   <h4 id="foot"><img src="images/logo.png"/></h4>
 
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

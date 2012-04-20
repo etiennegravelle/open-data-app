@@ -2,7 +2,7 @@
 
 require_once 'includes/db.php';
 require_once 'includes/functions.php';
-require_once 'includes/filter-wrapper.php';
+
 
 $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $rate = filter_input(INPUT_GET, 'rate', FILTER_SANITIZE_NUMBER_INT);
@@ -19,7 +19,7 @@ if (isset($cookie[$id]) || $rate < 0 || $rate > 5) {
 }
 
 $sql = $db->prepare('
-	UPDATE hills
+	UPDATE rinks
 	SET rate_count = rate_count + 1, rate_total = rate_total + :rate
 	WHERE id = :id
 ');

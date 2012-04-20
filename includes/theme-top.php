@@ -9,5 +9,11 @@
     <link href="css/general.css" rel="stylesheet">
     <?php endif; ?>
 	<script src="js/modernizr.dev.js"></script>
-</head>
-<body>
+    <h1><img src="images/header.png" /></h1>
+    <a href="admin/sign-in.php" id="login">Admin Login</a>
+<form id="geo-form">
+	<label for="adr" placeholder="Insert Address, Postal Code, Neighborhood, Street Name or Intersection"></label>
+	<input id="adr">
+    <button id="geo">Find Me</button>
+</form>
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700' rel='stylesheet' type='text/css'><body>
