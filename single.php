@@ -56,7 +56,10 @@ include 'includes/theme-top.php';
 <title><?php echo $results['rink_name'];?></title>
 </head>
 <body>
+
+<header></header>
 	<div class="single">
+    <div class="info">
 	<h1><?php echo $results['rink_name']; ?></h1>
 	<p>Longitude: <?php echo $results['longitude']; ?></p>
     <p>Latitude: <?php echo $results['latitude']; ?></p>
@@ -81,8 +84,16 @@ include 'includes/theme-top.php';
 
 <?php endif; ?>
 </p>
-</body>
+
+<a href="index.php" id="home">Back to home</a>
 </div>
+<aside id="single-aside"></aside>
+
+
+
+
+
+
 
 
 
@@ -100,10 +111,9 @@ include 'includes/theme-top.php';
     })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
+</div>
 
-<a href="index.php">Back to home</a>
 
 </body>
 </html>

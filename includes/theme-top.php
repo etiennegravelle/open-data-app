@@ -9,7 +9,7 @@
     <link href="css/general.css" rel="stylesheet">
     <?php endif; ?>
 	<script src="js/modernizr.dev.js"></script>
-    <h1><img src="images/header.png" /></h1>
+    <h1><a href="index.php"><img src="images/header.png" /></a></h1>
     <a href="admin/sign-in.php" id="login">Admin Login</a>
 <form id="geo-form">
 	<label for="adr" placeholder="Insert Address, Postal Code, Neighborhood, Street Name or Intersection"></label>

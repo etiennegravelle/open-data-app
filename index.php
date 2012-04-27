@@ -5,7 +5,7 @@
  *
  *@package ca.etiennegravelle.open-data-app
  *@copyright 2012 Etienne Gravelle
- *@author etienne Gravelle etienne.gravelel@gmail.com
+ *@author etienne gravelle etienne.gravelel@gmail.com
  *@link http://etiennegravelle.github.com/open-data-app/
  *@license New BSD license <link goes here>
  *@version 1.0.0
@@ -34,7 +34,8 @@ $results = $db->query('
 
 ?>
 
-
+<header></header>
+<aside></aside>
 	<ul class="rinks">
    
 	

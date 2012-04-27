@@ -124,7 +124,7 @@ userMarker = new google.maps.Marker({
 position : userLoc
 , map : map
 , title : 'You are here.'
-, icon : 'images/bone.png'
+, icon : 'images/user.png'
 , animation: google.maps.Animation.DROP
 });
 }
